@@ -11,12 +11,12 @@ Dashboard principal del sistema AML Anomaly Monitor.
 import streamlit as st
 
 st.set_page_config(
-    page_title="AML Anomaly Monitor",
+    page_title="AML Detection System",
     page_icon="🔎",
     layout="wide",
 )
 
-st.title("🔎 AML Anomaly Monitor")
+st.title("Sistema Inteligente para la Detección de Operaciones Sospechosas")
 
 st.markdown(
     """
@@ -29,6 +29,40 @@ st.info(
     "Usa el menú lateral para navegar entre Dashboard, Alertas, "
     "Transacciones y Reportes."
 )
+
+import streamlit as st
+
+st.title("Acerca del Proyecto")
+
+st.markdown("""
+## Sistema de Big Data para la Detección de Operaciones Sospechosas de Lavado de Activos mediante Modelos de Anomalías
+
+### Objetivo
+
+Detectar operaciones financieras potencialmente sospechosas utilizando técnicas de Machine Learning no supervisado.
+
+### Tecnologías
+
+- Python
+- Streamlit
+- Pandas
+- Scikit-Learn
+- SQLite
+- Plotly
+
+### Modelo utilizado
+
+Isolation Forest
+
+### Dataset
+
+100000 transacciones sintéticas
+
+### Autor
+
+Harumi Contreras
+""")
+
 
 st.subheader("Flujo del sistema")
 

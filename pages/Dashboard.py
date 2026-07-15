@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide",
 )
 
-st.title("📊 Dashboard AML")
+st.title("Dashboard AML")
 
 
 @st.cache_data(ttl=30)

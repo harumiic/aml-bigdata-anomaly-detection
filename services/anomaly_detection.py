@@ -16,6 +16,7 @@ from typing import Any
 import joblib
 import numpy as np
 import pandas as pd
+from services.database import save_alerts, save_execution
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import IsolationForest
 from sklearn.metrics import (
