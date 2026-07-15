@@ -36,9 +36,9 @@ ANOMALY_PERCENTAGE = 0.03
 # MODEL
 # =====================================
 
-CONTAMINATION = 0.03
+CONTAMINATION = 0.065
 
-N_ESTIMATORS = 200
+N_ESTIMATORS = 250
 
 MAX_SAMPLES = "auto"
 
