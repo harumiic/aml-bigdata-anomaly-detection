@@ -41,3 +41,23 @@ CONTAMINATION = 0.03
 N_ESTIMATORS = 200
 
 MAX_SAMPLES = "auto"
+
+# =====================================
+# AML CONFIGURATION
+# =====================================
+
+HIGH_RISK_COUNTRIES = [
+    "Panamá",
+    "Islas Caimán",
+    "Belice",
+    "Venezuela"
+]
+
+HIGH_RISK_CHANNELS = [
+    "Criptomonedas",
+    "Transferencia"
+]
+
+MAX_NORMAL_AMOUNT = 5000
+
+MAX_SUSPICIOUS_AMOUNT = 50000
