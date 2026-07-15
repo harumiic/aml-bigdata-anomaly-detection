@@ -1,0 +1,17 @@
+.venv/
+
+__pycache__/
+
+*.pyc
+
+*.db
+
+*.pkl
+
+.vscode/
+
+data/raw/*.csv
+
+data/processed/*.csv
+
+data/outputs/*.csv
