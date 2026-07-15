@@ -578,10 +578,8 @@ def main() -> None:
 
     model_file = detector.save_model()
 
-    predictions_file, alerts_file = (
-        detector.save_results(results)
-    )
-
+    predictions_file, alerts_file = detector.save_results(results)
+        
     detected_alerts = int(
         results["model_prediction"].sum()
     )
@@ -591,6 +589,25 @@ def main() -> None:
         if len(results) > 0
         else 0
     )
+
+    alerts_dataframe = results[
+        results["model_prediction"] == 1
+    ].copy()
+
+    execution_id = save_execution(
+        source_name="transactions_processed.csv",
+        total_transactions=len(results),
+        alerts_detected=detected_alerts,
+        alert_rate=alert_rate,
+        contamination=detector.contamination,
+        model_name="Isolation Forest",
+    )
+
+    saved_alerts = save_alerts(
+        alerts_dataframe,
+        execution_id,
+    )
+            
 
     print("=" * 70)
     print("MODELO ISOLATION FOREST ENTRENADO CORRECTAMENTE")
@@ -612,7 +629,10 @@ def main() -> None:
     print(f"Predicciones guardadas en: {predictions_file}")
     print(f"Alertas guardadas en: {alerts_file}")
     print("=" * 70)
-
+    print(f"Ejecución registrada con ID: {execution_id}")
+    print(f"Alertas guardadas en SQLite: {saved_alerts:,}")
+    
+    
     preview_columns = [
         "transaction_id",
         "customer_id",
