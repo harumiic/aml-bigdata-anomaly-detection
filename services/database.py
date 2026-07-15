@@ -7,7 +7,6 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
-from services.database import save_alerts, save_execution
 from config import DATABASE_PATH
 
 
